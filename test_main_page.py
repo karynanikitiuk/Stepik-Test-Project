@@ -17,5 +17,4 @@ def test_guest_can_go_to_login_page(browser):
     login_page.should_be_login_page()
 
     product_page = ProductPage(browser, link) 
-    product_page.add_product_to_basket()
-    
+    product_page.should_be_product_page()
