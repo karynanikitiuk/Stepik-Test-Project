@@ -2,6 +2,7 @@ from pages.main_page import MainPage
 from pages.login_page import LoginPage
 from pages.base_page import BasePage
 from pages.product_page import ProductPage
+from pages.locators import ProductPageLocators
 
 
 
@@ -16,5 +17,5 @@ def test_guest_can_go_to_login_page(browser):
     login_page = LoginPage(browser, browser.current_url)
     login_page.should_be_login_page()
 
-    product_page = ProductPage(browser, link) 
+    product_page = ProductPage(browser, ProductPageLocators.PAGE_LINK_NEW_YEAR)
     product_page.should_be_product_page()
