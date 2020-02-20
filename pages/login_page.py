@@ -18,7 +18,6 @@ class LoginPage(BasePage):
 #        assert self.is_element_present(*LoginPageLocators.LOGIN_PASSWORD_FIELD), "Login password field is not presented"
 #        assert self.is_element_present(*LoginPageLocators.PASSWORD_RESET_LINK), "Login password reset link is not presented"
 #        assert self.is_element_present(*LoginPageLocators.LOGIN_SUBMIT_BUTTON), "Login submit button is not presented"
-
         
     def should_be_register_form(self):
         assert self.is_element_present(*LoginPageLocators.REGISTRATION_FORM), "Registration form is not presented"
