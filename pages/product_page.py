@@ -12,6 +12,7 @@ class ProductPage(BasePage):
         self.product_price_comparison()
 
 
+
     def add_product_to_basket(self):
 #        self.browser.get("http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear")
 #        self.browser.get(PRODUCT_LINK)
@@ -36,3 +37,11 @@ class ProductPage(BasePage):
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
         price_alert = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE_ALERT).text
         assert product_price == price_alert, "Price isn't correct"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.ADDED_PRODUCT_NAME), \
+           "Success message is presented, but should not be"
+
+    def should_disappeared_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.ADDED_PRODUCT_NAME), \
+            "Success message is not disappeared, but should be"
