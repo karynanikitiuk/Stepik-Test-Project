@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+from pages.main_page import MainPage 
+from pages.product_page import ProductPage
+from pages.base_page import BasePage
+
+def test_guest_can_add_product_to_basket(browser):
+    product_page = ProductPage(browser) 
+    product_page.add_product_to_basket()
+=======
 from pages.product_page import ProductPage
 from pages.locators import ProductPageLocators
 import pytest
@@ -30,3 +39,4 @@ def test_guest_can_add_product_to_basket(browser, link):
 #    page.open()
 #    page.add_product_to_basket()
 ##    page.should_not_be_success_message()
+>>>>>>> 39e9cac730bef63a6d1b90a19bcf7af61c89311d
