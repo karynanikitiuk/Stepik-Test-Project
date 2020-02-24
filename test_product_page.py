@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from pages.main_page import MainPage 
 from pages.product_page import ProductPage
 from pages.base_page import BasePage
@@ -5,3 +6,37 @@ from pages.base_page import BasePage
 def test_guest_can_add_product_to_basket(browser):
     product_page = ProductPage(browser) 
     product_page.add_product_to_basket()
+=======
+from pages.product_page import ProductPage
+from pages.locators import ProductPageLocators
+import pytest
+
+LINK = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209?promo=newYear"
+LOGIN_LINK = "http://selenium1py.pythonanywhere.com/accounts/login/"
+
+
+@pytest.mark.parametrize('link', ["http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0",
+                                  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1",
+                                  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer2",
+                                  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3",
+                                  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer4",
+                                  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer5",
+                                  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer6",
+                                  pytest.param("http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7", marks=pytest.mark.xfail),
+                                  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer8",
+                                  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer9"])
+
+def test_guest_can_add_product_to_basket(browser, link):
+    product_page = ProductPage(browser, link)
+    product_page.open()
+    product_page.should_be_product_page()
+   
+#@pytest.mark.xfail
+#def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
+#    # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес
+#    page = ProductPage(browser, ProductPageLocators.PAGE_LINK_NEW_YEAR)
+#    # открываем страницу
+#    page.open()
+#    page.add_product_to_basket()
+##    page.should_not_be_success_message()
+>>>>>>> 39e9cac730bef63a6d1b90a19bcf7af61c89311d
