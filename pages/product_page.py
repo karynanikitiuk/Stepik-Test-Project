@@ -3,7 +3,6 @@ import time
 from selenium.common.exceptions import NoAlertPresentException
 from pages.base_page import BasePage
 
-PRODUCT_LINK = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019"
 
 class ProductPage(BasePage):
     def should_be_product_page(self):
@@ -14,8 +13,6 @@ class ProductPage(BasePage):
 
 
     def add_product_to_basket(self):
-#        self.browser.get("http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear")
-#        self.browser.get(PRODUCT_LINK)
         add_to_basket = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON)
         add_to_basket.click()
         self.solve_quiz_and_get_code()
