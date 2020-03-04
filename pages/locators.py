@@ -2,21 +2,18 @@ from selenium.webdriver.common.by import By
 
 class BasePageLocators():
     HOMEPAGE_LINK =  "http://selenium1py.pythonanywhere.com/"
+    LOGIN_URL = "http://selenium1py.pythonanywhere.com/accounts/login/"
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-group .btn.btn-default")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
-    LOGIN_LINK1 = "http://selenium1py.pythonanywhere.com/accounts/login/"
-
 
 class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
-
-
     REGISTRATION_FORM = (By.CSS_SELECTOR, "#register_form")
     REGISTRATION_EMAIL_FIELD = (By.CSS_SELECTOR, "#id_registration-email")
-    REGISTRATION_PASSWORD1 = (By.CSS_SELECTOR, "#id_registration-password1")
-    REGISTRATION_PASSWORD2 = (By.CSS_SELECTOR, "#id_registration-password2")
+    REGISTRATION_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password1")
+    REGISTRATION_REPEAT_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password2")
     REGISTRATION_SUBMIT_BUTTON = (By.CSS_SELECTOR, "#register_form > button")
 
 class ProductPageLocators():

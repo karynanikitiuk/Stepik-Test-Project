@@ -8,7 +8,6 @@ class LoginPage(BasePage):
         self.should_be_login_url()
         self.should_be_login_form()
         self.should_be_register_form()
-#        self.register_new_user("sofishestova@gmail.com", "password")
 
     def should_be_login_url(self):
         assert self.browser.current_url, "Login link is not found"
@@ -21,7 +20,7 @@ class LoginPage(BasePage):
 
     def register_new_user(self, email, password):
         self.browser.find_element(*LoginPageLocators.REGISTRATION_EMAIL_FIELD).send_keys(email)
-        self.browser.find_element(*LoginPageLocators.REGISTRATION_PASSWORD1).send_keys(password)
-        self.browser.find_element(*LoginPageLocators.REGISTRATION_PASSWORD2).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.REGISTRATION_PASSWORD).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.REGISTRATION_REPEAT_PASSWORD).send_keys(password)
         self.browser.find_element(*LoginPageLocators.REGISTRATION_SUBMIT_BUTTON).click()
         
