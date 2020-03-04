@@ -1,2 +1,2 @@
 # Stepik-Test-Project
-Automated testing project
+Tests' automation with Selenium and Python. Final course project.
