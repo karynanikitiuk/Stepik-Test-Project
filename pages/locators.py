@@ -11,10 +11,7 @@ class BasePageLocators():
 
 class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
-#    LOGIN_USERNAME_FIELD = (By.CSS_SELECTOR, "#id_login-username")
-#    LOGIN_PASSWORD_FIELD = (By.CSS_SELECTOR, "#id_login-password")
-#    PASSWORD_RESET_LINK = (By.CSS_SELECTOR, "#login_form > p > a")
-#    LOGIN_SUBMIT_BUTTON = (By.CSS_SELECTOR, "#login_form > button")
+
 
     REGISTRATION_FORM = (By.CSS_SELECTOR, "#register_form")
     REGISTRATION_EMAIL_FIELD = (By.CSS_SELECTOR, "#id_registration-email")
