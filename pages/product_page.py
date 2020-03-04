@@ -1,6 +1,5 @@
 from pages.locators import ProductPageLocators
 import time
-from selenium.common.exceptions import NoAlertPresentException
 from pages.base_page import BasePage
 
 
